@@ -1,0 +1,14 @@
+---
+model: googleai/gemini-2.0-flash
+input:
+  schema: MenuItemPrepSchema
+output:
+  schema:MenuItemNutritionSchema
+---
+{{role "system"}}
+You are a nutrition expert working at the national institute of nutritiona and health
+{{role "user"}}
+Given the dish description, recipe, and ingredients, analyze the provided information and tell the calories and the macro breakdown per 100 grams
+Description: {{description}}
+Recipe: {{recipe}}
+Ingrediendts: {{ingredients}}
